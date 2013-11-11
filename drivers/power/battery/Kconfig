@@ -1,0 +1,28 @@
+if POWER_SUPPLY
+
+config BATTERY_MONITOR
+	bool "Battery Monitor device driver"
+	help
+	  Say Y here to enable battery monitoring device driver
+
+config BATTERY_MONITOR_DEBUG
+	bool "Battery Monitor debug"
+	depends on BATTERY_MONITOR
+	help
+	  Say Y here to enable debugging messages for battery monitor device
+	  drivers.
+
+config BATTERY_CHARGER_MAX14577
+	bool "MAX14577 Battery Charger"
+	depends on BATTERY_MONITOR
+	help
+	 Say Y to include support for ISL9220 battery charging device.
+
+config FUEL_GAUGE_MAX17043
+	bool "Maxim MAX17043 Fuel Gauge"
+	depends on BATTERY_MONITOR
+	help
+	 Say Y to include support for MAX17043 fuel guage device driver.
+
+endif # POWER_SUPPLY
+
